@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
+	import { base } from '$app/paths';
 	import { draft } from '$lib/draft.svelte';
 	import { venueSuggestions } from '$lib/db';
 
@@ -15,7 +16,7 @@
 		e.preventDefault();
 		if (!canContinue) return;
 		draft.venue = draft.venue.trim();
-		goto('/visit/new/when');
+		goto(`${base}/visit/new/when`);
 	}
 </script>
 

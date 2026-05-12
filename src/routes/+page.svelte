@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
+	import { base } from '$app/paths';
 	import { listVisits } from '$lib/db';
 	import type { Visit } from '$lib/types';
 	import { formatDate } from '$lib/format';
@@ -30,7 +31,7 @@
 
 	function startNewVisit() {
 		resetDraft();
-		goto('/visit/new/venue');
+		goto(`${base}/visit/new/venue`);
 	}
 </script>
 
@@ -72,7 +73,7 @@
 		{#each filtered as v (v.id)}
 			<li>
 				<a
-					href={`/visit/${v.id}`}
+					href={`${base}/visit/${v.id}`}
 					class="block rounded-lg border border-zinc-200 bg-white p-4 transition-colors hover:border-zinc-400"
 				>
 					<div class="flex items-baseline justify-between gap-3">

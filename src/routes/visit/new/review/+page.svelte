@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
+	import { base } from '$app/paths';
 	import { draft, resetDraft } from '$lib/draft.svelte';
 	import { createVisit } from '$lib/db';
 	import { formatDateTime } from '$lib/format';
@@ -32,7 +33,7 @@
 				notes: draft.notes?.trim() || undefined
 			});
 			resetDraft();
-			goto('/');
+			goto(`${base}/`);
 		} catch (e) {
 			error = e instanceof Error ? e.message : String(e);
 			saving = false;
@@ -100,7 +101,7 @@
 
 	<div class="flex justify-between">
 		<a
-			href="/visit/new/notes"
+			href="{base}/visit/new/notes"
 			class="rounded-full border border-zinc-300 px-6 py-2.5 font-medium text-zinc-700 hover:border-zinc-900"
 		>
 			Terug

@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
+	import { base } from '$app/paths';
 	import { draft } from '$lib/draft.svelte';
 
 	if (draft.orders.length === 0) draft.orders = [''];
@@ -19,7 +20,7 @@
 		e.preventDefault();
 		draft.orders = draft.orders.map((o) => o.trim()).filter((o) => o.length > 0);
 		if (draft.orders.length === 0) return;
-		goto('/visit/new/rating');
+		goto(`${base}/visit/new/rating`);
 	}
 </script>
 
@@ -62,7 +63,7 @@
 
 	<div class="flex justify-between">
 		<a
-			href="/visit/new/when"
+			href="{base}/visit/new/when"
 			class="rounded-full border border-zinc-300 px-6 py-2.5 font-medium text-zinc-700 hover:border-zinc-900"
 		>
 			Terug

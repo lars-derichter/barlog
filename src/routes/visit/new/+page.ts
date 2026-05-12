@@ -1,5 +1,6 @@
 import { redirect } from '@sveltejs/kit';
+import { base } from '$app/paths';
 
 export const load = () => {
-	throw redirect(307, '/visit/new/venue');
+	throw redirect(307, `${base}/visit/new/venue`);
 };

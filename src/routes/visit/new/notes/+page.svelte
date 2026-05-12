@@ -1,11 +1,12 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
+	import { base } from '$app/paths';
 	import { draft } from '$lib/draft.svelte';
 
 	function next(e: SubmitEvent) {
 		e.preventDefault();
 		draft.notes = (draft.notes ?? '').trim();
-		goto('/visit/new/review');
+		goto(`${base}/visit/new/review`);
 	}
 </script>
 
@@ -24,7 +25,7 @@
 
 	<div class="flex justify-between">
 		<a
-			href="/visit/new/rating"
+			href="{base}/visit/new/rating"
 			class="rounded-full border border-zinc-300 px-6 py-2.5 font-medium text-zinc-700 hover:border-zinc-900"
 		>
 			Terug

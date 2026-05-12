@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/state';
 	import { goto } from '$app/navigation';
+	import { base } from '$app/paths';
 	import { resetDraft } from '$lib/draft.svelte';
 
 	let { children } = $props();
@@ -15,13 +16,13 @@
 	function cancel() {
 		if (confirm('Deze visite weggooien?')) {
 			resetDraft();
-			goto('/');
+			goto(`${base}/`);
 		}
 	}
 </script>
 
 <header class="mb-6 flex items-center justify-between">
-	<a href="/" class="text-sm text-zinc-500 hover:text-zinc-900">← Terug naar overzicht</a>
+	<a href="{base}/" class="text-sm text-zinc-500 hover:text-zinc-900">← Terug naar overzicht</a>
 	<button type="button" onclick={cancel} class="text-sm text-zinc-500 hover:text-zinc-900">
 		Annuleer
 	</button>

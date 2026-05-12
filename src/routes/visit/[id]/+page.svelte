@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/state';
 	import { goto } from '$app/navigation';
+	import { base } from '$app/paths';
 	import { getVisit, updateVisit, deleteVisit } from '$lib/db';
 	import type { Visit, VenueType } from '$lib/types';
 	import { toLocalInputValue, fromLocalInputValue } from '$lib/format';
@@ -63,7 +64,7 @@
 				rating,
 				notes: notes.trim() || undefined
 			});
-			goto('/');
+			goto(`${base}/`);
 		} catch (err) {
 			error = err instanceof Error ? err.message : String(err);
 			saving = false;
@@ -79,7 +80,7 @@
 </script>
 
 <header class="mb-6">
-	<a href="/" class="text-sm text-zinc-500 hover:text-zinc-900">← Terug naar overzicht</a>
+	<a href="{base}/" class="text-sm text-zinc-500 hover:text-zinc-900">← Terug naar overzicht</a>
 </header>
 
 {#if !loaded}

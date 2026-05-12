@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
+	import { base } from '$app/paths';
 	import { draft } from '$lib/draft.svelte';
 	import { toLocalInputValue, fromLocalInputValue } from '$lib/format';
 
@@ -8,7 +9,7 @@
 	function next(e: SubmitEvent) {
 		e.preventDefault();
 		draft.visitedAt = fromLocalInputValue(local);
-		goto('/visit/new/orders');
+		goto(`${base}/visit/new/orders`);
 	}
 </script>
 
@@ -26,7 +27,7 @@
 
 	<div class="flex justify-between">
 		<a
-			href="/visit/new/venue"
+			href="{base}/visit/new/venue"
 			class="rounded-full border border-zinc-300 px-6 py-2.5 font-medium text-zinc-700 hover:border-zinc-900"
 		>
 			Terug

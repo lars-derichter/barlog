@@ -1,10 +1,11 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
+	import { base } from '$app/paths';
 	import { draft } from '$lib/draft.svelte';
 	import Stars from '$lib/components/Stars.svelte';
 
 	function next() {
-		goto('/visit/new/notes');
+		goto(`${base}/visit/new/notes`);
 	}
 
 	function skip() {
@@ -30,7 +31,7 @@
 
 	<div class="flex items-center justify-between">
 		<a
-			href="/visit/new/orders"
+			href="{base}/visit/new/orders"
 			class="rounded-full border border-zinc-300 px-6 py-2.5 font-medium text-zinc-700 hover:border-zinc-900"
 		>
 			Terug
