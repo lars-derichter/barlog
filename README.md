@@ -2,6 +2,10 @@
 
 A small personal web app to log visits to bars and restaurants: where, what was ordered, how it was, and any notes. Single-user, mobile-friendly, all data stays in the browser (IndexedDB).
 
+## Check it out
+
+https://lars-derichter.github.io/barlog/
+
 ## Quick start
 
 ```sh
